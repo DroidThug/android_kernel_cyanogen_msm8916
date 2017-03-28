@@ -64,6 +64,7 @@ function make_dtb {
 
 function make_zip {
     cd $REPACK_DIR
+    rm Caesium*
     zip -r9 $FINAL_VER.zip * -x README kernel_temp.zip
     mkdir -p $ZIP_MOVE
     cp  kernel_temp.zip $ZIP_MOVE/`echo $FINAL_VER`.zip
