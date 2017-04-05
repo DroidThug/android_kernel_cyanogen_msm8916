@@ -12,14 +12,14 @@ clear
 
 # Resources
 THREAD="-j$(grep -c ^processor /proc/cpuinfo)"
-DEFCONFIG="lineageos_jalebi_defconfig"
+DEFCONFIG="lineageos-wt86518_defconfig"
 KERNEL="zImage"
 
 #halogen Kernel Details
 KERNEL_NAME="Caesium"
 VER="v1.8"
 VER="-$(date +"%Y%m%d")-$VER"
-DEVICE="-$(echo $DEFCONFIG | cut -d _ -f 2)"
+DEVICE="-$(echo $DEFCONFIG | cut -d - -f 2 | cut -d _ -f 1)"
 FINAL_VER="$KERNEL_NAME""$DEVICE""$VER"
 
 # Vars
